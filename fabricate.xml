@@ -4,15 +4,25 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
     <tns:java Xmx="512m" Xms="128m" />
     <tns:logs>
-        <tns:log class="" setting="true"/>
-        <tns:log class="" setting="true"/>
+        <tns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
     </tns:logs>
+    <tns:dependencies>
+        <tns:remote_repository>http://central.maven.org/maven2</tns:remote_repository>
+    </tns:dependencies>
     <tns:project_group>
     	<tns:stages>
-    	    <tns:stage name="obtain" class="org.adligo.fabricate.build.tasks.VersionObtainer"/>
+    	    <tns:stage name="setup" class="org.adligo.fabricate.build.tasks.DefaultSetup"/>
+    	    <tns:stage name="obtain" class="org.adligo.fabricate.build.tasks.GitObtainer"/>
+    	    <tns:stage name="maven-obtain" class="org.adligo.fabricate.build.tasks.MavenObtainer"/>
     	    <tns:stage name="jar" class="org.adligo.fabricate.build.tasks.CompileAndJar"/>
+    	    <tns:stage name="test" class="org.adligo.fabricate.build.tasks.Tests4jTests"/>
+    	    <tns:stage name="publish" class="org.adligo.fabricate.build.tasks.PublishToIntelligence4j"
+    	        optional="true" />
     	</tns:stages>    
     	<tns:projects>
+    	    <tns:scm>
+    	        <git hostname="git" path="/opt/git/org/" />
+    	    </tns:scm>
     	    <tns:project name="fabricate.adligo.org" version=""/>
     	    <tns:project name="tests4j.adligo.org" version=""/>
     	    <tns:project name="tests4j_4jacoco.adligo.org" version=""/>
