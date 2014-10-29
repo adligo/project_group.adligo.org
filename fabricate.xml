@@ -13,6 +13,7 @@
     	<tns:stages>
     	    <tns:stage name="setup" class="org.adligo.fabricate.build.tasks.DefaultSetup"/>
     	    <tns:stage name="obtain" class="org.adligo.fabricate.build.tasks.GitObtainer"/>
+    	    <tns:stage name="load" class="org.adligo.fabricate.build.tasks.LoadAndCleanProjects"/>
     	    <tns:stage name="maven-obtain" class="org.adligo.fabricate.build.tasks.MavenObtainer"/>
     	    <tns:stage name="jar" class="org.adligo.fabricate.build.tasks.CompileAndJar"/>
     	    <tns:stage name="test" class="org.adligo.fabricate.build.tasks.Tests4jTests"/>
