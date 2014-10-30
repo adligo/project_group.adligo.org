@@ -11,13 +11,13 @@
     </tns:dependencies>
     <tns:project_group>
     	<tns:stages>
-    	    <tns:stage name="setup" class="org.adligo.fabricate.build.tasks.DefaultSetup"/>
-    	    <tns:stage name="obtain" class="org.adligo.fabricate.build.tasks.GitObtainer"/>
-    	    <tns:stage name="load" class="org.adligo.fabricate.build.tasks.LoadAndCleanProjects"/>
-    	    <tns:stage name="maven-obtain" class="org.adligo.fabricate.build.tasks.MavenObtainer"/>
-    	    <tns:stage name="jar" class="org.adligo.fabricate.build.tasks.CompileAndJar"/>
-    	    <tns:stage name="test" class="org.adligo.fabricate.build.tasks.Tests4jTests"/>
-    	    <tns:stage name="publish" class="org.adligo.fabricate.build.tasks.PublishToIntelligence4j"
+    	    <tns:stage name="setup" class="org.adligo.fabricate.build.stages.DefaultSetup"/>
+    	    <tns:stage name="obtain" class="org.adligo.fabricate.build.stages.GitObtainer"/>
+    	    <tns:stage name="load" class="org.adligo.fabricate.build.stages.LoadAndCleanProjects"/>
+    	    <tns:stage name="maven-obtain" class="org.adligo.fabricate.build.stages.MavenObtainer"/>
+    	    <tns:stage name="jar" class="org.adligo.fabricate.build.stages.CompileAndJar"/>
+    	    <tns:stage name="test" class="org.adligo.fabricate.build.stages.Tests4jTests"/>
+    	    <tns:stage name="publish" class="org.adligo.fabricate.build.stages.PublishToIntelligence4j"
     	        optional="true" />
     	</tns:stages>    
     	<tns:projects>
