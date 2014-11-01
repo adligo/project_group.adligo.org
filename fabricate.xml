@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:fabricate xmlns:tns="http://www.adligo.org/fabricate/xml/io" 
-    xmlns:tns1="http://www.adligo.org/fabricate/xml/io/library" 
+<fns:fabricate xmlns:fns="http://www.adligo.org/fabricate/xml/io" 
+    xmlns:lns="http://www.adligo.org/fabricate/xml/io/library" 
+    xmlns:tns="http://www.adligo.org/fabricate/xml/io/tasks" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
-    <tns:java Xmx="512m" Xms="128m" />
-    <tns:logs>
-        <tns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
-    </tns:logs>
-    <tns:dependencies>
-        <tns:remote_repository>http://central.maven.org/maven2</tns:remote_repository>
-    </tns:dependencies>
-    <tns:project_group>
-    	<tns:stages>
-    	    <tns:stage name="setup" class="org.adligo.fabricate.build.stages.DefaultSetup"/>
-    	    <tns:stage name="obtain" class="org.adligo.fabricate.build.stages.GitObtainer"/>
-    	    <tns:stage name="load" class="org.adligo.fabricate.build.stages.LoadAndCleanProjects"/>
-    	    <tns:stage name="maven-obtain" class="org.adligo.fabricate.build.stages.MavenObtainer"/>
-    	    <tns:stage name="jar" class="org.adligo.fabricate.build.stages.CompileAndJar"/>
-    	    <tns:stage name="test" class="org.adligo.fabricate.build.stages.Tests4jTests"/>
-    	    <tns:stage name="publish" class="org.adligo.fabricate.build.stages.PublishToIntelligence4j"
+    <fns:java Xmx="512m" Xms="128m" />
+    <fns:logs>
+        <fns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
+    </fns:logs>
+    <fns:dependencies>
+        <fns:remote_repository>http://central.maven.org/maven2</fns:remote_repository>
+    </fns:dependencies>
+    <fns:project_group>
+    	<fns:stages>
+    	    <fns:stage name="setup" class="org.adligo.fabricate.build.stages.DefaultSetup"/>
+    	    <fns:stage name="obtain" class="org.adligo.fabricate.build.stages.GitObtainer"/>
+    	    <fns:stage name="load" class="org.adligo.fabricate.build.stages.LoadAndCleanProjects"/>
+    	    <fns:stage name="maven-obtain" class="org.adligo.fabricate.build.stages.MavenObtainer"/>
+    	    <fns:stage name="jar" class="org.adligo.fabricate.build.stages.CompileJarAndDeposit">
+    	    	<tns:task name="jar">
+    	    	    <tns:param key="Default-Vendor" value="Adligo Inc"/>
+    	    	</tns:task>  
+    	    </fns:stage>
+    	    <fns:stage name="test" class="org.adligo.fabricate.build.stages.Tests4jTests"/>
+    	    <fns:stage name="publish" class="org.adligo.fabricate.build.stages.PublishToIntelligence4j"
     	        optional="true" />
-    	</tns:stages>    
-    	<tns:projects>
-    	    <tns:scm>
+    	</fns:stages>    
+    	<fns:projects>
+    	    <fns:scm>
     	        <git hostname="git" path="/opt/git/org/" />
-    	    </tns:scm>
-    	    <tns:project name="fabricate.adligo.org" version=""/>
-    	    <tns:project name="tests4j.adligo.org" version=""/>
-    	    <tns:project name="tests4j_4jacoco.adligo.org" version=""/>
-    	    <tns:project name="tests4j_tests.adligo.org" version=""/>
-    	    <tns:project name="tests4j_4gwt.adligo.org" version=""/>
-    	</tns:projects>
-    </tns:project_group>
-</tns:fabricate>
+    	    </fns:scm>
+    	    <fns:project name="fabricate.adligo.org" version=""/>
+    	    <fns:project name="tests4j.adligo.org" version=""/>
+    	    <fns:project name="tests4j_4jacoco.adligo.org" version=""/>
+    	    <fns:project name="tests4j_tests.adligo.org" version=""/>
+    	    <fns:project name="tests4j_4gwt.adligo.org" version=""/>
+    	</fns:projects>
+    </fns:project_group>
+</fns:fabricate>
