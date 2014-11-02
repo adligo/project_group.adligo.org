@@ -3,7 +3,7 @@
     xmlns:lns="http://www.adligo.org/fabricate/xml/io/library" 
     xmlns:tns="http://www.adligo.org/fabricate/xml/io/tasks" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
-    <fns:java Xmx="512m" Xms="128m" />
+    <fns:java Xmx="1g" Xms="256m" />
     <fns:logs>
         <fns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
     </fns:logs>
