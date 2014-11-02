@@ -2,6 +2,6 @@
 <tns:library xmlns:tns="http://www.adligo.org/fabricate/xml/io/library" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <tns:dependencies>
-    <tns:dependency group="com.google.gwt" artifact="gwt-user" version="2.7.0-rc1" />
+    <tns:dependency group="com.google.gwt" artifact="gwt-user" version="2.6.1" />
    </tns:dependencies>
 </tns:library>
