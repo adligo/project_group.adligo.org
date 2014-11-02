@@ -23,9 +23,11 @@
     	    	    <tns:param key="Default-Vendor" value="Adligo Inc"/>
     	    	</tns:task>  
     	    </fns:stage>
+    	    <!-- these will be plugins and not part of the fabricate project itself
     	    <fns:stage name="test" class="org.adligo.fabricate.build.stages.Tests4jTests"/>
     	    <fns:stage name="publish" class="org.adligo.fabricate.build.stages.PublishToIntelligence4j"
     	        optional="true" />
+    	         -->
     	</fns:stages>    
     	<fns:projects>
     	    <fns:scm>
