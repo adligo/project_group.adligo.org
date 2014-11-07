@@ -39,10 +39,10 @@
     	    <fns:project name="gwt_refs.adligo.org" version=""/>
     	    
     	    <fns:project name="tests4j.adligo.org" version=""/>
-    	    <fns:project name="tests4j_4jacoco.adligo.org" version=""/>
-    	    
-    	    <fns:project name="tests4j_4gwt.adligo.org" version=""/>
     	    <fns:project name="tests4j_gen.adligo.org" version=""/>
+    	    <fns:project name="tests4j_4gwt.adligo.org" version=""/>
+    	    <fns:project name="tests4j_4jacoco.adligo.org" version=""/>
+    	    <fns:project name="tests4j_4mockito.adligo.org" version=""/>
     	    
     	    <fns:project name="tests4j_tests.adligo.org" version=""/>
     	</fns:projects>
