@@ -35,7 +35,7 @@
     	    <fns:scm>
     	        <git hostname="git" path="/opt/git/org/" />
     	    </fns:scm>
-    	    <!--  alpha order projects here, as the dependencys are figured out automaticlly -->
+    	    <!--  alpha order projects here, as the dependencies are figured out automatically -->
     	    <fns:project name="fabricate.adligo.org" version=""/>
     	    
     	    <fns:project name="gwt_refs.adligo.org" version=""/>
@@ -47,6 +47,11 @@
     	    <fns:project name="tests4j_4mockito.adligo.org" version=""/>
     	    
     	    <fns:project name="tests4j_tests.adligo.org" version=""/>
+    	    
+    	    <fns:project name="css.adligo.org" version=""/>
+    	    <fns:project name="css_tests.adligo.org" version=""/>
+    	    <fns:project name="addoc.adligo.org" version=""/>
+    	    <fns:project name="addoc_tests.adligo.org" version=""/>
     	</fns:projects>
     </fns:project_group>
 </fns:fabricate>
