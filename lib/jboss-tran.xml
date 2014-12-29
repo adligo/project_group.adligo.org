@@ -2,7 +2,8 @@
 <tns:library xmlns:tns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <tns:dependencies>
-    <tns:dependency group="org.ow2.asm" artifact="asm-debug-all" version="5.0.3" />
-    <tns:dependency group="org.jacoco" artifact="org.jacoco.core" version="0.7.0.201403182114" />
+    <tns:dependency group="org.jboss.logging" artifact="jboss-logging" version="3.1.2.GA" />
+    <tns:dependency group="org.jboss.spec.javax.transaction" artifact="jboss-transaction-api_1.1_spec" version="1.0.1.Final" />
+
    </tns:dependencies>
 </tns:library>

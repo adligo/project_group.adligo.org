@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:library xmlns:tns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+   <tns:dependencies>
+   <!--  Note: The jme library is always dependent on the JME platform setting, projects which 
+   	depend on this library must be using the JME platform to be aware of these jars.
+   -->
+    <tns:dependency group="com.sun.jme" artifact="cldc" version="1.1" fileName="cldc_1.1.jar" platform="JME" />
+    <tns:dependency group="com.sun.jme" artifact="midp" version="2.1" fileName="midp_2.1.jar" platform="JME" />
+   </tns:dependencies>
+</tns:library>

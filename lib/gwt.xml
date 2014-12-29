@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:library xmlns:tns="http://www.adligo.org/fabricate/xml/io/library" 
+<tns:library xmlns:tns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <tns:dependencies>
+    <!--  Note: The gwt library is usually NOT dependent on the GWT platform setting, projects which 
+   	depend on this library may set platform specific behavior in the library tag.  By default
+   	they will include the library, but they may filter it out for GWT specific builds.
+   -->
     <tns:dependency group="com.google.gwt" artifact="gwt-user" version="2.6.1" />
+    <tns:dependency group="com.google.gwt" artifact="gwt-dev" version="2.6.1" />
    </tns:dependencies>
 </tns:library>

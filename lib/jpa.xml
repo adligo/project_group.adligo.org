@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:library xmlns:tns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+   <tns:dependencies>
+    <tns:dependency group="org.apache.geronimo.specs" artifact="geronimo-ejb_3.1_spec" version="1.0" />
+    <tns:dependency group="org.apache.geronimo.specs" artifact="geronimo-jpa_2.0_spec" version="1.0" />
+    <tns:dependency group="org.apache.geronimo.specs" artifact="geronimo-validation_1.0_spec" version="1.0" />
+   </tns:dependencies>
+</tns:library>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+   <lns:dependencies>
+    <lns:dependency group="org.hibernate" artifact="hibernate-core" version="4.1.9.Final" />
+    <lns:dependency group="org.hibernate" artifact="hibernate-entitymanager" version="4.1.9.Final" />
+    <lns:dependency group="org.hibernate.common" artifact="hibernate-commons-annotations" version="4.0.1.Final" />
+    <lns:dependency group="org.hibernate.javax.persistence" artifact="hibernate-jpa-2.0-api" version="1.0.1.Final" />
+    <lns:dependency group="org.dom4j" artifact="dom4j" version="1.6.1" />
+    <lns:dependency group="org.antlr" artifact="antlr" version="2.7.7" />
+   </lns:dependencies>
+</lns:library>

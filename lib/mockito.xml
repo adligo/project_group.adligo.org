@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io/library" 
+<lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <lns:dependencies>
-    <lns:dependency group="junit" artifact="junit" version="4.11"/>
+    <lns:library>junit</lns:library>
     <!-- mockito depends on junit -->
     <lns:dependency group="org.mockito" artifact="mockito-all" version="1.10.8"/>
    </lns:dependencies>
