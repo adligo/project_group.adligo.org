@@ -3,7 +3,11 @@
     xmlns:lns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
     xmlns:tns="http://www.adligo.org/fabricate/xml/io/tasks/v1_0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
-    <fns:java Xmx="1g" Xms="256m" />
+    <!--  note the threads limiter is currently due to a issue
+    	I am seeing with many ssh/git connections where I get a 
+    	128 return code error, which needs to be looked into. 
+     -->
+    <fns:java Xmx="1g" Xms="256m" threads="8" />
     <fns:logs>
         <fns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
         <fns:log class="org.adligo.fabricate.build.stages.MavenDownloader" setting="true"/>
