@@ -46,13 +46,12 @@
     	    
     	    
     	    <fns:project name="ant_log.adligo.org" version=""/>
-    	    <!--  
+    	    <!-- 
     	    <fns:project name="ajaxb.adligo.org" version=""/>
     	    <fns:project name="ajaxb_tests.adligo.org" version=""/>
-    	    
+    	     -->
     	    <fns:project name="aws_client.adligo.org" version=""/>
     	    <fns:project name="aws_client_tests.adligo.org" version=""/>
-    	    -->
     	    <!--  note awsgp and asdc* will be released later with different names. -->
 
     	    <fns:project name="cl.adligo.org" version=""/>
@@ -65,18 +64,18 @@
     	    <fns:project name="fabricate_tests.adligo.org" version=""/>
     	    
     	    <fns:project name="gwt_refs.adligo.org" version=""/>
-    	    <!--  
+    	    
     	    <fns:project name="hibernate_db.adligo.org" version=""/>
-    	    -->
+    	    
     	    <fns:project name="i_adi.adligo.org" version=""/>
     	    <fns:project name="i_adi_tests.adligo.org" version=""/>
     	    
     	    <fns:project name="i_adig.adligo.org" version=""/>
     	    <fns:project name="i_adig_tests.adligo.org" version=""/>
-    	    <!-- 
+    	    
     	    <fns:project name="i_db.adligo.org" version=""/>
     	    <fns:project name="i_db_tests.adligo.org" version=""/>
-    	     -->
+    	    
     	    <fns:project name="i_disk.adligo.org" version=""/>
     	    <fns:project name="i_disk_tests.adligo.org" version=""/>
     	    
@@ -148,13 +147,12 @@
 			-->
     	    <fns:project name="xmlt.adligo.org" version=""/>
     	    <fns:project name="xmlt_tests.adligo.org" version=""/>
-    	    <!--  
+    	    
     	    <fns:project name="xmlt4hibernate.adligo.org" version=""/>
     	    <fns:project name="xmlt4hibernate_tests.adligo.org" version=""/>
     	    
     	    <fns:project name="xmlt4jpa.adligo.org" version=""/>
     	    <fns:project name="xmlt4jpa_tests.adligo.org" version=""/>
-    	    -->
     	</fns:projects>
     </fns:project_group>
 </fns:fabricate>
