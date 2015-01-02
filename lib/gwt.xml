@@ -6,7 +6,7 @@
    	depend on this library may set platform specific behavior in the library tag.  By default
    	they will include the library, but they may filter it out for GWT specific builds.
    -->
-    <tns:dependency group="com.google.gwt" artifact="gwt-user" version="2.6.1" />
+    <tns:dependency group="com.google.gwt" artifact="gwt-user" version="2.6.1" extract="true" />
     <tns:dependency group="com.google.gwt" artifact="gwt-dev" version="2.6.1" />
    </tns:dependencies>
 </tns:library>

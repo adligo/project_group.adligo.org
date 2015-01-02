@@ -10,6 +10,7 @@
         <fns:log class="org.adligo.fabricate.build.stages.GitObtainer" setting="true"/>
     </fns:logs>
     <fns:dependencies>
+        <fns:remote_repository>http://127.0.0.1/</fns:remote_repository>
         <fns:remote_repository>http://repo1.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://uk.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://mirrors.ibiblio.org/maven2/</fns:remote_repository>
@@ -38,39 +39,50 @@
     	    <!--  alpha order projects here, as the dependencies are figured out automatically -->
     	    <fns:project name="addoc.adligo.org" version=""/>
     	    <fns:project name="addoc_tests.adligo.org" version=""/>
+    	    <!--  I will continue to support xml_io_generator using ant for a little while
+    	    	although some new projects xml_io_generator_4ant and xml_io_generator_4fabricate 
+    	    	will appear soon, to extract the ant specific code from xml_io_generator. 
+    	     -->
     	    
+    	    
+    	    <fns:project name="ant_log.adligo.org" version=""/>
+    	    <!--  
     	    <fns:project name="ajaxb.adligo.org" version=""/>
     	    <fns:project name="ajaxb_tests.adligo.org" version=""/>
     	    
     	    <fns:project name="aws_client.adligo.org" version=""/>
     	    <fns:project name="aws_client_tests.adligo.org" version=""/>
+    	    -->
     	    <!--  note awsgp and asdc* will be released later with different names. -->
+
     	    <fns:project name="cl.adligo.org" version=""/>
     	    <fns:project name="cl_tests.adligo.org" version=""/>
-    	    
+
     	    <fns:project name="css.adligo.org" version=""/>
     	    <fns:project name="css_tests.adligo.org" version=""/>
     	    
     	    <fns:project name="fabricate.adligo.org" version=""/>
+    	    <fns:project name="fabricate_tests.adligo.org" version=""/>
     	    
     	    <fns:project name="gwt_refs.adligo.org" version=""/>
-    	    
+    	    <!--  
     	    <fns:project name="hibernate_db.adligo.org" version=""/>
-    	    
+    	    -->
     	    <fns:project name="i_adi.adligo.org" version=""/>
     	    <fns:project name="i_adi_tests.adligo.org" version=""/>
+    	    
     	    <fns:project name="i_adig.adligo.org" version=""/>
     	    <fns:project name="i_adig_tests.adligo.org" version=""/>
-    	    
+    	    <!-- 
     	    <fns:project name="i_db.adligo.org" version=""/>
     	    <fns:project name="i_db_tests.adligo.org" version=""/>
-    	    
+    	     -->
     	    <fns:project name="i_disk.adligo.org" version=""/>
     	    <fns:project name="i_disk_tests.adligo.org" version=""/>
     	    
     	    <fns:project name="i_ldap.adligo.org" version=""/>
     	    <fns:project name="i_ldap_tests.adligo.org" version=""/>
-    	    
+    	   
     	    <fns:project name="i_log.adligo.org" version=""/>
     	    <fns:project name="i_log_tests.adligo.org" version=""/>
     	    
@@ -94,11 +106,11 @@
     	    
     	    <fns:project name="models_core.adligo.org" version=""/>
     	    <fns:project name="models_core_tests.adligo.org" version=""/>
-    	    
+
     	    
     	    <fns:project name="models_core_relations.adligo.org" version=""/>
     	    <fns:project name="models_core_relations_tests.adligo.org" version=""/>
-    	    
+    	    <!--
     	    <fns:project name="models_core_relations_xml_io.adligo.org" version=""/>
     	    <fns:project name="models_core_relations_xml_io_tests.adligo.org" version=""/>
     	    <fns:project name="models_core_relations_xml_io_net.adligo.org" version=""/>
@@ -108,7 +120,7 @@
     	    <fns:project name="models_core_xml_io_tests.adligo.org" version=""/>
     	    <fns:project name="models_core_xml_io_net.adligo.org" version=""/>
     	    <fns:project name="models_core_xml_io_net_tests.adligo.org" version=""/>
-    	    
+    	    -->
     	    <fns:project name="params.adligo.org" version=""/>
     	    <fns:project name="params_tests.adligo.org" version=""/>
     	    
@@ -130,17 +142,19 @@
     	    <fns:project name="xml_io_generator.adligo.org" version=""/>
     	    <fns:project name="xml_io_generator_tests.adligo.org" version=""/>
     	    
+    	    <!-- 
     	    <fns:project name="xml_schemas.adligo.org" version=""/>
     	    <fns:project name="xml_schemas_tests.adligo.org" version=""/>
-
+			-->
     	    <fns:project name="xmlt.adligo.org" version=""/>
     	    <fns:project name="xmlt_tests.adligo.org" version=""/>
-    	    
+    	    <!--  
     	    <fns:project name="xmlt4hibernate.adligo.org" version=""/>
     	    <fns:project name="xmlt4hibernate_tests.adligo.org" version=""/>
     	    
     	    <fns:project name="xmlt4jpa.adligo.org" version=""/>
     	    <fns:project name="xmlt4jpa_tests.adligo.org" version=""/>
+    	    -->
     	</fns:projects>
     </fns:project_group>
 </fns:fabricate>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:library xmlns:tns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+   <tns:dependencies>
+    <tns:dependency group="org.apache.ant" artifact="ant" version="1.9.3" />
+   </tns:dependencies>
+</tns:library>

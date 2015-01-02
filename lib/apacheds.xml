@@ -2,9 +2,9 @@
 <lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <lns:dependencies>
-    <lns:dependency group="org.slf4j" artifact="slf4j-api" version="1.7.5" />
-    <lns:dependency group="org.slf4j" artifact="slf4j-log4j12" version="1.7.5" />
-    <lns:dependency group="org.slf4j" artifact="slf4j-simple" version="1.7.5" />
-    <lns:dependency group="org.apache.directory.server" artifact="apacheds-all" version="2.0.0-M10" />
+    <lns:dependency group="org.slf4j" artifact="slf4j-api" version="1.7.9" />
+    <lns:dependency group="org.slf4j" artifact="slf4j-log4j12" version="1.7.9" />
+    <lns:dependency group="org.slf4j" artifact="slf4j-simple" version="1.7.9" />
+    <lns:dependency group="org.apache.directory.server" artifact="apacheds-all" version="2.0.0-M19" />
    </lns:dependencies>
 </lns:library>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+   <lns:dependencies>
+   	<lns:library>apache-commons-logging</lns:library>
+    <lns:dependency group="org.apache.commons" artifact="httpclient" version="1.2" />
+    <lns:dependency group="org.apache.commons" artifact="httpcore" version="1.2" />
+   </lns:dependencies>
+</lns:library>

@@ -2,8 +2,8 @@
 <lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <lns:dependencies>
-    <lns:dependency group="org.apache.commons-pool" artifact="commons-pool" version="1.6" />
-    <lns:dependency group="org.apache.commons-dbcp" artifact="commons-dbcp" version="1.4" />
-	<lns:dependency group="org.hsqldb" artifact="hsqldb" version="1.8.0.7" />
+    <lns:dependency group="org.apache.commons" artifact="commons-pool" version="1.6" />
+    <lns:dependency group="org.apache.commons" artifact="commons-dbcp" version="1.4" />
+	<lns:dependency group="org.hsqldb" artifact="hsqldb" version="2.3.2" />
    </lns:dependencies>
 </lns:library>
