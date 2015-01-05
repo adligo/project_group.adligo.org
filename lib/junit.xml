@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io/library/v1_0" 
+<lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io_v1/library_v1_0.xsd" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <lns:dependencies>
     <lns:dependency group="org.junit" artifact="junit" version="4.11">
     	<lns:ide name="eclipse" >
-    		<lns:arg key="kind" value="con" />
-    		<lns:arg key="path" value="org.eclipse.jdt.junit.JUNIT_CONTAINER/4" />
+    		<lns:arg key="kind" val="con" />
+    		<lns:arg key="path" val="org.eclipse.jdt.junit.JUNIT_CONTAINER/4" />
     	</lns:ide>
     </lns:dependency>
    </lns:dependencies>
