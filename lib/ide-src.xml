@@ -2,10 +2,9 @@
 <lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io_v1/library_v1_0.xsd" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <lns:dependencies>
-    <lns:dependency group="org.junit" artifact="junit" version="4.11">
+    <lns:dependency group="java" artifact="java" version="default" type="ide">
     	<lns:ide name="eclipse" >
-    		<lns:arg key="kind" value="con" />
-    		<lns:arg key="path" value="org.eclipse.jdt.junit.JUNIT_CONTAINER/4" />
+    		<lns:arg key="src" value="src" />
     	</lns:ide>
     </lns:dependency>
    </lns:dependencies>

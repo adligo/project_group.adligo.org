@@ -76,6 +76,8 @@
     	    <fns:project name="fabricate4junit_tests.adligo.org" version="" />
     	    <fns:project name="fabricate4proguard.adligo.org" version="" />
     	    <fns:project name="fabricate4proguard_tests.adligo.org" version="" />
+    	    <fns:project name="fabricate4tests4j.adligo.org" version="" />
+    	    <fns:project name="fabricate4tests4j_tests.adligo.org" version="" />
     	    <fns:project name="fabricate4xml_io.adligo.org" version="" />
     	    <fns:project name="fabricate4xml_io_tests.adligo.org" version="" />
     	    -->
