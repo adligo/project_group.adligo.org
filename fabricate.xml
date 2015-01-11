@@ -10,7 +10,7 @@
     <fns:java Xmx="1g" Xms="256m" threads="8" />
     <fns:logs>
         <fns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
-        <fns:log class="org.adligo.fabricate.build.stages.MavenDownloader" setting="true"/>
+        <fns:log class="org.adligo.fabricate.build.stages.DependencyDownloader" setting="true"/>
         <fns:log class="org.adligo.fabricate.build.stages.GitObtainer" setting="true"/>
     </fns:logs>
     <fns:dependencies>
@@ -24,7 +24,7 @@
     	    <fns:stage name="setup" class="org.adligo.fabricate.build.stages.DefaultSetup"/>
     	    <fns:stage name="obtain" class="org.adligo.fabricate.build.stages.GitObtainer"/>
     	    <fns:stage name="load" class="org.adligo.fabricate.build.stages.LoadAndCleanProjects"/>
-    	    <fns:stage name="maven-obtain" class="org.adligo.fabricate.build.stages.MavenDownloader"/>
+    	    <fns:stage name="downloadDependencies" class="org.adligo.fabricate.build.stages.DependencyDownloader"/>
     	    <fns:stage name="jar" class="org.adligo.fabricate.build.stages.CompileJarAndDeposit">
     	    	<fns:task name="jar">
     	    	    <cns:param key="Default-Vendor" value="Adligo Inc"/>
