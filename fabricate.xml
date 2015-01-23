@@ -22,13 +22,125 @@
     <fns:project_group>
     	<fns:stages>
     	    <fns:stage name="setup" class="org.adligo.fabricate.build.stages.DefaultSetup"/>
-    	    <fns:stage name="obtain" class="org.adligo.fabricate.build.stages.GitObtainer"/>
+    	    <fns:stage name="git" class="org.adligo.fabricate.build.stages.GitStage"/>
     	    <fns:stage name="load" class="org.adligo.fabricate.build.stages.LoadAndCleanProjects"/>
     	    <fns:stage name="downloadDependencies" class="org.adligo.fabricate.build.stages.DependencyDownloader"/>
-    	    <fns:stage name="jar" class="org.adligo.fabricate.build.stages.CompileJarAndDeposit">
+    	    <fns:stage name="jar" class="org.adligo.fabricate.build.stages.TasksStage">
+    	    	<!--  defaults 
+    	    	<fns:params>
+   	    			<cns:param key="injected_instances" >
+		    	    	<cns:param key="jar_name_builder" value="someClass">
+		    	    		<cns:param key="name" value="simple" />
+		    	    	<cns:param>
+	    	    	</cns:param>
+    	    	</fns:params>
+    	    	-->
+    	    	<fns:task name="compile">
+    	    		<fns:params>
+    	    			<!--  defaults 
+    	    			<cns:param key="project-dependency-type" value="jar" />
+    	    			<cns:param key="input" >
+		    	    	    <cns:param key="include" value="src/*/*.java"/>
+	    	    	    </cns:param>
+	    	    	    <cns:param key="output" value="build/classes" />
+	    	    	    -->
+    	    		</fns:params>
+    	    	</fns:task>
+    	    	<fns:task name="obsfucate" optional="true">
+    	    		<!--  this is just a place holder so I don't
+    	    			forget where obfuscation will eventually go.
+    	    			The old Adligo Ant builds used Proguard for
+    	    			obfuscation.
+    	    		 -->
+    	    		 <fns:params>
+    	    		 	<cns:param key="include" value="build/classes/*/*.class"/>
+    	    		 </fns:params>
+    	    	</fns:task>
     	    	<fns:task name="jar">
-    	    	    <cns:param key="Default-Vendor" value="Adligo Inc"/>
+    	    		<fns:params>
+	    	    	    <cns:param key="Default-Vendor" value="Adligo Inc"/>
+	    	    	    <cns:param key="input" >
+	    	    	    	<cns:param key="include" value="build/classes/*/*.class"/>
+		    	    	    <cns:param key="include" value="src/*/*.xml"/>
+		    	    	    <cns:param key="include" value="src/*/*.properties"/>
+	    	    	    </cns:param>
+	    	    	    <!--  defaults
+	    	    	    <cns:param key="output" value="build/jar" />
+	    	    	    <cns:param key="name" value="simple" />
+	    	    	     -->
+    	    	    </fns:params>
     	    	</fns:task>  
+    	    	<fns:task name="deposit">
+    	    		<!--  defaults
+    	    		<fns:params>
+    	    			<cns:param key="input" value="build/jar"/>
+    	    			<cns:param key="type" value="jar"/>
+    	    			<cns:param key="dir" value="jars"/>
+    	    			<cns:param key="name" value="simple" />
+    	    		</fns:params>
+    	    		-->
+    	    	</fns:task>
+    	    	<fns:task name="gwt-jar" optional="true">
+    	    		<fns:params>
+	    	    	    <cns:param key="Default-Vendor" value="Adligo Inc"/>
+	    	    	    <cns:param key="input" >
+	    	    	    	<cns:param key="include" value="build/classes/*/*.class"/>
+		    	    	    <cns:param key="include" value="src/*/*.java"/>
+		    	    	    <cns:param key="include" value="src/*/*.xml"/>
+		    	    	    <cns:param key="include" value="src/*/*.properties"/>
+	    	    	    </cns:param>
+	    	    	    <cns:param key="output" value="build/gwt-jar" />
+	    	    	    <!--  defaults
+	    	    	    <cns:param key="name" value="simple" />
+	    	    	    -->
+    	    	    </fns:params>
+    	    	</fns:task>
+    	    	<fns:task name="deposit-gwt">
+    	    		<fns:params>
+    	    			<cns:param key="input" value="build/gwt-jar"/>
+    	    			<cns:param key="type" value="gwt-jar"/>
+    	    			<cns:param key="dir" value="gwt-jars"/>
+    	    			<!--  defaults
+	    	    	    <cns:param key="name" value="simple" />
+	    	    	    -->
+    	    		</fns:params>
+    	    	</fns:task>
+    	    	<fns:task name="preverify" optional="true">
+    	    	<!--  this is just a place holder so I don't
+    	    			forget where pre-verification will eventually go.
+    	    			The old Adligo Ant builds used Proguard for
+    	    			pre-verification (this was mostly for JME).
+    	    			This will modify the class files.
+    	    		 -->
+    	    		 <fns:params>
+    	    		 	<cns:param key="project-dependency-type" value="jme-jar"/>
+    	    		 	<cns:param key="include" value="build/classes/*/*.class"/>
+    	    		 </fns:params>
+    	    	</fns:task>
+    	    	<fns:task name="jme-jar" optional="true">
+    	    		<fns:params>
+	    	    	    <cns:param key="Default-Vendor" value="Adligo Inc"/>
+	    	    	    <cns:param key="input" >
+	    	    	    	<cns:param key="include" value="build/classes/*/*.class"/>
+		    	    	    <cns:param key="include" value="src/*/*.xml"/>
+		    	    	    <cns:param key="include" value="src/*/*.properties"/>
+	    	    	    </cns:param>
+	    	    	    <cns:param key="output" value="build/jme-jar" />
+	    	    	    <!--  defaults
+	    	    	    <cns:param key="name" value="simple" />
+	    	    	    -->
+    	    	    </fns:params>
+    	    	</fns:task>  
+    	    	<fns:task name="jme-deposit" optional="true">
+    	    		<fns:params>
+    	    			<cns:param key="input" value="build/jme-jar"/>
+    	    			<cns:param key="type" value="jme-jar"/>
+    	    			<cns:param key="dir" value="jme-jars"/>
+    	    			<!--  defaults
+	    	    	    <cns:param key="name" value="simple" />
+	    	    	    -->
+    	    		</fns:params>
+    	    	</fns:task>
     	    </fns:stage>
     	    <!-- these will be plugins and not part of the fabricate project itself
     	    <fns:stage name="test" class="org.adligo.fabricate.build.stages.Tests4jTests"/>
