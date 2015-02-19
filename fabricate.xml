@@ -9,24 +9,41 @@
      -->
     <fns:java Xmx="1g" Xms="256m" threads="8" />
     <fns:logs>
+    	<!-- 
+        <fns:log class="org.adligo.fabricate.repository.RepositoryManager" setting="true"/>
+        <fns:log class="org.adligo.fabricate.repository.DependenciesManager" setting="true"/>
+        
         <fns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
         <fns:log class="org.adligo.fabricate.build.stages.DependencyDownloader" setting="true"/>
+         -->
         <fns:log class="org.adligo.fabricate.build.stages.GitObtainer" setting="true"/>
     </fns:logs>
     <fns:dependencies>
+    
         <fns:remote_repository>http://127.0.0.1/</fns:remote_repository>
         <fns:remote_repository>http://repo1.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://uk.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://mirrors.ibiblio.org/maven2/</fns:remote_repository>
+        
+        <fns:library>ant</fns:library>
+        <fns:library>apacheds</fns:library>
+        <fns:library>gwt</fns:library>
     </fns:dependencies>
+    <!-- 
+    <fns:command name="decrypt" class="org.adligo.fabricate.routines.implicit.EncryptCommand"/>
+    <fns:trait name="decryptTrait" class="org.adligo.fabricate.routines.implicit.EncryptTrait"/>
+     -->
+    
     <fns:project_group>
     	<fns:stages>
+    		<fns:stage name="jar" class="org.adligo.fabricate.build.stages.TasksStage"/>
+    		<!--  old
     	    <fns:stage name="setup" class="org.adligo.fabricate.build.stages.DefaultSetup"/>
     	    <fns:stage name="git" class="org.adligo.fabricate.build.stages.GitStage"/>
     	    <fns:stage name="load" class="org.adligo.fabricate.build.stages.LoadAndCleanProjects"/>
     	    <fns:stage name="downloadDependencies" class="org.adligo.fabricate.build.stages.DependencyDownloader"/>
     	    <fns:stage name="jar" class="org.adligo.fabricate.build.stages.TasksStage">
-    	    	<!--  defaults 
+    	       defaults 
     	    	<fns:params>
    	    			<cns:param key="injected_instances" >
 		    	    	<cns:param key="jar_name_builder" value="someClass">
@@ -34,54 +51,50 @@
 		    	    	<cns:param>
 	    	    	</cns:param>
     	    	</fns:params>
-    	    	-->
-    	    	<fns:task name="compile">
-    	    		<fns:params>
-    	    			<!--  defaults 
+    	    	<fns:task name="compile" 
+    	    		class="toDo" >
+    	    		<cns:params>
     	    			<cns:param key="project-dependency-type" value="jar" />
     	    			<cns:param key="input" >
 		    	    	    <cns:param key="include" value="src/*/*.java"/>
 	    	    	    </cns:param>
 	    	    	    <cns:param key="output" value="build/classes" />
-	    	    	    -->
-    	    		</fns:params>
+    	    		</cns:params>
     	    	</fns:task>
-    	    	<fns:task name="obsfucate" optional="true">
-    	    		<!--  this is just a place holder so I don't
+    	    	<fns:task name="obsfucate"  class="toDo" >
+    	    		 this is just a place holder so I don't
     	    			forget where obfuscation will eventually go.
     	    			The old Adligo Ant builds used Proguard for
     	    			obfuscation.
-    	    		 -->
-    	    		 <fns:params>
+    	    		 
+    	    		 <cns:params>
     	    		 	<cns:param key="include" value="build/classes/*/*.class"/>
-    	    		 </fns:params>
+    	    		 </cns:params>
     	    	</fns:task>
-    	    	<fns:task name="jar">
-    	    		<fns:params>
+    	    	<fns:task name="jar"
+    	    		class="toDo" >
+    	    		<cns:params>
 	    	    	    <cns:param key="Default-Vendor" value="Adligo Inc"/>
 	    	    	    <cns:param key="input" >
 	    	    	    	<cns:param key="include" value="build/classes/*/*.class"/>
 		    	    	    <cns:param key="include" value="src/*/*.xml"/>
 		    	    	    <cns:param key="include" value="src/*/*.properties"/>
 	    	    	    </cns:param>
-	    	    	    <!--  defaults
 	    	    	    <cns:param key="output" value="build/jar" />
 	    	    	    <cns:param key="name" value="simple" />
-	    	    	     -->
-    	    	    </fns:params>
+    	    	    </cns:params>
     	    	</fns:task>  
-    	    	<fns:task name="deposit">
-    	    		<!--  defaults
+    	    	<fns:task name="deposit" 
+    	    		class="toDo" >
     	    		<fns:params>
     	    			<cns:param key="input" value="build/jar"/>
     	    			<cns:param key="type" value="jar"/>
     	    			<cns:param key="dir" value="jars"/>
     	    			<cns:param key="name" value="simple" />
     	    		</fns:params>
-    	    		-->
     	    	</fns:task>
-    	    	<fns:task name="gwt-jar" optional="true">
-    	    		<fns:params>
+    	    	<fns:task name="gwt-jar" class="toDo"  >
+    	    		<cns:params>
 	    	    	    <cns:param key="Default-Vendor" value="Adligo Inc"/>
 	    	    	    <cns:param key="input" >
 	    	    	    	<cns:param key="include" value="build/classes/*/*.class"/>
@@ -90,35 +103,32 @@
 		    	    	    <cns:param key="include" value="src/*/*.properties"/>
 	    	    	    </cns:param>
 	    	    	    <cns:param key="output" value="build/gwt-jar" />
-	    	    	    <!--  defaults
 	    	    	    <cns:param key="name" value="simple" />
-	    	    	    -->
-    	    	    </fns:params>
+    	    	    </cns:params>
     	    	</fns:task>
-    	    	<fns:task name="deposit-gwt">
-    	    		<fns:params>
+    	    	<fns:task name="deposit-gwt"
+    	    		class="toDo" >
+    	    		<cns:params>
     	    			<cns:param key="input" value="build/gwt-jar"/>
     	    			<cns:param key="type" value="gwt-jar"/>
     	    			<cns:param key="dir" value="gwt-jars"/>
-    	    			<!--  defaults
 	    	    	    <cns:param key="name" value="simple" />
-	    	    	    -->
-    	    		</fns:params>
+    	    		</cns:params>
     	    	</fns:task>
-    	    	<fns:task name="preverify" optional="true">
-    	    	<!--  this is just a place holder so I don't
+    	    	<fns:task name="preverify" class="toDo">
+    	    	  this is just a place holder so I don't
     	    			forget where pre-verification will eventually go.
     	    			The old Adligo Ant builds used Proguard for
     	    			pre-verification (this was mostly for JME).
     	    			This will modify the class files.
-    	    		 -->
-    	    		 <fns:params>
+    	    		 
+    	    		 <cns:params>
     	    		 	<cns:param key="project-dependency-type" value="jme-jar"/>
     	    		 	<cns:param key="include" value="build/classes/*/*.class"/>
-    	    		 </fns:params>
+    	    		 </cns:params>
     	    	</fns:task>
-    	    	<fns:task name="jme-jar" optional="true">
-    	    		<fns:params>
+    	    	<fns:task name="jme-jar" class="toDo">
+    	    		<cns:params>
 	    	    	    <cns:param key="Default-Vendor" value="Adligo Inc"/>
 	    	    	    <cns:param key="input" >
 	    	    	    	<cns:param key="include" value="build/classes/*/*.class"/>
@@ -126,31 +136,31 @@
 		    	    	    <cns:param key="include" value="src/*/*.properties"/>
 	    	    	    </cns:param>
 	    	    	    <cns:param key="output" value="build/jme-jar" />
-	    	    	    <!--  defaults
 	    	    	    <cns:param key="name" value="simple" />
-	    	    	    -->
-    	    	    </fns:params>
+    	    	    </cns:params>
     	    	</fns:task>  
-    	    	<fns:task name="jme-deposit" optional="true">
-    	    		<fns:params>
+    	    	<fns:task name="jme-deposit" class="toDo" >
+    	    		<cns:params>
     	    			<cns:param key="input" value="build/jme-jar"/>
     	    			<cns:param key="type" value="jme-jar"/>
     	    			<cns:param key="dir" value="jme-jars"/>
-    	    			<!--  defaults
 	    	    	    <cns:param key="name" value="simple" />
-	    	    	    -->
-    	    		</fns:params>
+    	    		</cns:params>
     	    	</fns:task>
     	    </fns:stage>
-    	    <!-- these will be plugins and not part of the fabricate project itself
+    	    these will be plugins and not part of the fabricate project itself
     	    <fns:stage name="test" class="org.adligo.fabricate.build.stages.Tests4jTests"/>
     	    <fns:stage name="publish" class="org.adligo.fabricate.build.stages.PublishToIntelligence4j"
     	        optional="true" />
     	         -->
     	</fns:stages>    
     	<fns:projects>
-    	    <fns:scm>
-    	        <fns:git hostname="git" path="/opt/git/org/" />
+    	    <fns:scm name="Git">
+    	    	<cns:params>
+	 	    	    <cns:param key="hostname" value="git" />
+	 	    	    <cns:param key="path" value="/opt/git/org" />
+	 	    	    <cns:param key="protocol" value="ssh" />
+		    	</cns:params>
     	    </fns:scm>
     	    <!--  alpha order projects here, as the dependencies are figured out automatically -->
     	    <fns:project name="addoc.adligo.org" version=""/>
