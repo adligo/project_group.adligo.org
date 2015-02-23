@@ -25,9 +25,6 @@
         <fns:remote_repository>http://uk.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://mirrors.ibiblio.org/maven2/</fns:remote_repository>
         
-        <fns:library>ant</fns:library>
-        <fns:library>apacheds</fns:library>
-        <fns:library>gwt</fns:library>
     </fns:dependencies>
     <!-- 
     <fns:command name="decrypt" class="org.adligo.fabricate.routines.implicit.EncryptCommand"/>
