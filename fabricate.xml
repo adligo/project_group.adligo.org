@@ -32,7 +32,6 @@
      -->
     
     <fns:project_group>
-    	<fns:stages/>    
     	<fns:projects>
     	    <fns:scm name="Git">
     	    	<cns:params>
