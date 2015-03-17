@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io_v1/library_v1_0.xsd" 
+   xmlns:cns="http://www.adligo.org/fabricate/xml/io_v1/common_v1_0.xsd"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <lns:dependencies>
     <lns:dependency group="java" artifact="java" version="default" type="ide">
     	<lns:ide name="eclipse" >
     		<lns:args>
-    			<lns:param key="src" value="src" />
+    			<cns:param key="src" value="src" />
     		</lns:args>
     	</lns:ide>
     </lns:dependency>

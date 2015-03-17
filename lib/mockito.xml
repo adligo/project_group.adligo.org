@@ -3,7 +3,7 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
    <lns:dependencies>
     <lns:library>junit</lns:library>
-    <!-- mockito depends on junit -->
-    <lns:dependency group="org.mockito" artifact="mockito-all" version="1.10.8"/>
+	    <!-- mockito depends on junit -->
+	    <lns:dependency group="org.mockito" artifact="mockito-all" version="1.10.8"/>
    </lns:dependencies>
 </lns:library>
