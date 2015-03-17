@@ -4,7 +4,9 @@
    <lns:dependencies>
     <lns:dependency group="java" artifact="java" version="default" type="ide">
     	<lns:ide name="eclipse" >
-    		<lns:arg key="src" value="src" />
+    		<lns:args>
+    			<lns:param key="src" value="src" />
+    		</lns:args>
     	</lns:ide>
     </lns:dependency>
    </lns:dependencies>

@@ -4,8 +4,10 @@
    <lns:dependencies>
     <lns:dependency group="org.junit" artifact="junit" version="4.11">
     	<lns:ide name="eclipse" >
-    		<lns:arg key="kind" value="con" />
-    		<lns:arg key="path" value="org.eclipse.jdt.junit.JUNIT_CONTAINER/4" />
+    		<lns:args>
+    			<lns:param key="kind" value="con" />
+    			<lns:param key="path" value="org.eclipse.jdt.junit.JUNIT_CONTAINER/4" />
+    		</lns:args>
     	</lns:ide>
     </lns:dependency>
    </lns:dependencies>

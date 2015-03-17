@@ -4,8 +4,10 @@
    <lns:dependencies>
     <lns:dependency group="java" artifact="java" version="default" type="ide">
     	<lns:ide name="eclipse" >
-    		<lns:arg key="con" value="org.eclipse.jdt.launching.JRE_CONTAINER" />
-    		<lns:arg key="output" value="bin" />
+    		<lns:args>
+	    		<lns:param key="con" value="org.eclipse.jdt.launching.JRE_CONTAINER" />
+	    		<lns:param key="output" value="bin" />
+    		</lns:args>
     	</lns:ide>
     </lns:dependency>
    </lns:dependencies>
