@@ -18,6 +18,10 @@
          -->
         <fns:log class="org.adligo.fabricate.build.stages.GitObtainer" setting="true"/>
     </fns:logs>
+    <fns:attributes>
+    	<cns:param key="include" value="**/*.xml"/>
+    	<cns:param key="gwt include" value="**/*.xml"/>
+    </fns:attributes>
     <fns:dependencies>
     
         <fns:remote_repository>http://127.0.0.1/</fns:remote_repository>
