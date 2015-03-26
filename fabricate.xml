@@ -20,10 +20,10 @@
     </fns:logs>
     <fns:attributes>
     	<cns:param key="include" value="src"> 
-    		<cns:param key="files" value="*/*.xml"> 
+    		<cns:param key="files" value="*/*.xml"/> 
     	</cns:param>
     	<cns:param key="gwt include" value="src">
-    		<cns:param key="files" value="*/*.java"> 
+    		<cns:param key="files" value="*/*.java"/> 
     	</cns:param>
     </fns:attributes>
     <fns:dependencies>
