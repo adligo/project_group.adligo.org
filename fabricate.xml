@@ -24,6 +24,8 @@
     		<cns:param key="files" value="*/*.xsd"/> 
     	</cns:param>
     	<cns:param key="gwt include" value="src">
+    		<cns:param key="files" value="*/*.xml"/> 
+    		<cns:param key="files" value="*/*.xsd"/> 
     		<cns:param key="files" value="*/*.java"/> 
     	</cns:param>
     </fns:attributes>
