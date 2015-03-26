@@ -19,8 +19,8 @@
         <fns:log class="org.adligo.fabricate.build.stages.GitObtainer" setting="true"/>
     </fns:logs>
     <fns:attributes>
-    	<cns:param key="include" value="**/*.xml"/>
-    	<cns:param key="gwt include" value="**/*.xml"/>
+    	<cns:param key="include" value="*/*.xml"/>
+    	<cns:param key="gwt include" value="*/*.xml"/>
     </fns:attributes>
     <fns:dependencies>
     
