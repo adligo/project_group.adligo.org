@@ -9,13 +9,12 @@
      -->
     <fns:java Xmx="1g" Xms="256m" threads="8" />
     <fns:logs>
-    	<!-- 
-        <fns:log class="org.adligo.fabricate.repository.RepositoryManager" setting="true"/>
+        <fns:log class="org.adligo.fabricate.FabricateOptsSetup" setting="true"/>
+	<fns:log class="org.adligo.fabricate.repository.RepositoryManager" setting="true"/>
         <fns:log class="org.adligo.fabricate.repository.DependenciesManager" setting="true"/>
         
         <fns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
         <fns:log class="org.adligo.fabricate.build.stages.DependencyDownloader" setting="true"/>
-         -->
         <fns:log class="org.adligo.fabricate.build.stages.GitObtainer" setting="true"/>
     </fns:logs>
     <fns:attributes>
@@ -28,6 +27,10 @@
     		<cns:param key="files" value="*/*.xsd"/> 
     		<cns:param key="files" value="*/*.java"/> 
     	</cns:param>
+    	<cns:param key="ide" value="eclipse">
+    		<cns:param key="output" value="classes_e"/> 
+    		<cns:param key="con" value="org.eclipse.jdt.launching.JRE_CONTAINER" />
+    	</cns:param>
     </fns:attributes>
     <fns:dependencies>
     
@@ -35,9 +38,13 @@
         <fns:remote_repository>http://repo1.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://uk.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://mirrors.ibiblio.org/maven2/</fns:remote_repository>
-        
+		<fns:dependency group="org.adligo" artifact="fabricate4eclipse" fileName="fabricate4eclipse_snapshot.jar" version="snapshot" />        
     </fns:dependencies>
-    <!-- 
+    
+    <fns:command name="classpath2eclipse" class="org.adligo.fabricate.routines.ProjectQueueRoutine">
+		<cns:task name="classpath2eclipseTask" class="org.adligo.fabricate4eclipse.classpath_conversion.FabricateClasspathToEclipse4ishConverter" />
+    </fns:command>
+<!-- 
     <fns:command name="decrypt" class="org.adligo.fabricate.routines.implicit.EncryptCommand"/>
     <fns:trait name="decryptTrait" class="org.adligo.fabricate.routines.implicit.EncryptTrait"/>
      -->
