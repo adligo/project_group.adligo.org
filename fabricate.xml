@@ -42,7 +42,7 @@
     </fns:dependencies>
     
     <fns:command name="classpath2eclipse" class="org.adligo.fabricate.routines.ProjectQueueRoutine">
-		<cns:task name="classpath2eclipseTask" class="org.adligo.fabricate4eclipse.classpath_conversion.FabricateClasspathToEclipse4ishConverter" />
+		<cns:task name="classpath2eclipseTask" class="org.adligo.fabricate4eclipse.classpath_conversion.FabricateClasspathToEclipse4ishClasspathConverter" />
     </fns:command>
 <!-- 
     <fns:command name="decrypt" class="org.adligo.fabricate.routines.implicit.EncryptCommand"/>
