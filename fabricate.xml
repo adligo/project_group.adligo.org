@@ -10,12 +10,9 @@
     <fns:java Xmx="1g" Xms="256m" threads="8" />
     <fns:logs>
         <fns:log class="org.adligo.fabricate.FabricateOptsSetup" setting="true"/>
-	<fns:log class="org.adligo.fabricate.repository.RepositoryManager" setting="true"/>
-        <fns:log class="org.adligo.fabricate.repository.DependenciesManager" setting="true"/>
-        
-        <fns:log class="org.adligo.fabricate.external.RepositoryDownloader" setting="true"/>
-        <fns:log class="org.adligo.fabricate.build.stages.DependencyDownloader" setting="true"/>
-        <fns:log class="org.adligo.fabricate.build.stages.GitObtainer" setting="true"/>
+		<fns:log class="org.adligo.fabricate.repository.RepositoryManager" setting="true"/>
+        <fns:log class="org.adligo.fabricate.repository.DependenciesManager" setting="false"/>
+        <fns:log class="org.adligo.fabricate.repository.DependencyManager" setting="false"/>
     </fns:logs>
     <fns:attributes>
     	<cns:param key="include" value="src"> 
@@ -35,10 +32,13 @@
     <fns:dependencies>
     
         <fns:remote_repository>http://127.0.0.1/</fns:remote_repository>
+        <!-- 
         <fns:remote_repository>http://repo1.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://uk.maven.org/maven2/</fns:remote_repository>
         <fns:remote_repository>http://mirrors.ibiblio.org/maven2/</fns:remote_repository>
-		<fns:dependency group="org.adligo" artifact="fabricate4eclipse" fileName="fabricate4eclipse_snapshot.jar" version="snapshot" />        
+         -->
+		<fns:dependency group="org.adligo" artifact="fabricate4eclipse" 
+			fileName="fabricate4eclipse_snapshot.jar" version="snapshot" />        
     </fns:dependencies>
     
     <fns:command name="classpath2eclipse" class="org.adligo.fabricate.routines.ProjectQueueRoutine">
