@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:library xmlns:tns="http://www.adligo.org/fabricate/xml/io_v1/library_v1_0.xsd" 
+<lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io_v1/library_v1_0.xsd" 
+	xmlns:cns="http://www.adligo.org/fabricate/xml/io_v1/common_v1_0.xsd"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
-   <tns:dependencies>
+   <lns:dependencies>
     <!--  Note: The gwt library is usually NOT dependent on the GWT platform setting, projects which 
    	depend on this library may set platform specific behavior in the library tag.  By default
    	they will include the library, but they may filter it out for GWT specific builds.
    -->
-    <tns:dependency group="com.google.gwt" artifact="gwt-user" version="2.6.1" extract="true" />
-    <tns:dependency group="com.google.gwt" artifact="gwt-dev" version="2.6.1" />
-   </tns:dependencies>
-</tns:library>
+    <lns:dependency group="com.google.gwt" artifact="gwt-user" version="2.6.1" extract="true" />
+    <lns:dependency group="com.google.gwt" artifact="gwt-dev" version="2.6.1" >
+    	<lns:ide name="eclipse" >
+    		<lns:args>
+    			<cns:param key="con" value="com.google.gwt.eclipse.core.GWT_CONTAINER" />
+    		</lns:args>
+    	</lns:ide>
+    </lns:dependency>
+   </lns:dependencies>
+</lns:library>
