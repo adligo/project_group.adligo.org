@@ -13,6 +13,7 @@
 		<fns:log class="org.adligo.fabricate.repository.RepositoryManager" setting="true"/>
         <fns:log class="org.adligo.fabricate.repository.DependenciesManager" setting="false"/>
         <fns:log class="org.adligo.fabricate.repository.DependencyManager" setting="false"/>
+        
     </fns:logs>
     <fns:attributes>
     	<cns:param key="include" value="src"> 
