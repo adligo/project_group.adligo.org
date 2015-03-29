@@ -6,7 +6,7 @@
     <lns:dependency group="org.junit" artifact="junit" version="4.11">
     	<lns:ide name="eclipse" >
     		<lns:args>
-    			<cns:param key="path" value="org.eclipse.jdt.junit.JUNIT_CONTAINER/4" />
+    			<cns:param key="con" value="org.eclipse.jdt.junit.JUNIT_CONTAINER/4" />
     		</lns:args>
     	</lns:ide>
     </lns:dependency>
