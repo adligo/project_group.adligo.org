@@ -1,211 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fns:fabricate xmlns:fns="http://www.adligo.org/fabricate/xml/io_v1/fabricate_v1_0.xsd" 
-    xmlns:lns="http://www.adligo.org/fabricate/xml/io_v1/library_v1_0.xsd" 
-    xmlns:cns="http://www.adligo.org/fabricate/xml/io_v1/common_v1_0.xsd" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
-    <!--  note the threads limiter is currently due to a issue
-    	I am seeing with many ssh/git connections where I get a 
-    	128 return code error, which needs to be looked into. 
-     -->
-    <fns:java Xmx="1g" Xms="256m" threads="8" />
-    <fns:logs>
-        <fns:log setting="true" 
-        	class="org.adligo.fabricate.FabricateOptsSetup"/>
-       	<!--  reposistory -->
-		<fns:log setting="true" 
-			class="org.adligo.fabricate.repository.RepositoryManager" />
-        <fns:log setting="false" 
-        	class="org.adligo.fabricate.repository.DependenciesManager" />
-        <fns:log setting="false" 
-        	class="org.adligo.fabricate.repository.DependencyManager" />
+  xmlns:lns="http://www.adligo.org/fabricate/xml/io_v1/library_v1_0.xsd" 
+  xmlns:cns="http://www.adligo.org/fabricate/xml/io_v1/common_v1_0.xsd" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <!--  note the threads limiter is currently due to a issue
+    I am seeing with many ssh/git connections where I get a 
+    128 return code error, which needs to be looked into. 
+  -->
+  <fns:java Xmx="1g" Xms="256m" threads="8" />
+  <fns:logs>
+    <fns:log setting="true" 
+      class="org.adligo.fabricate.FabricateOptsSetup"/>
+    
+    <!--  reposistory -->
+    <fns:log setting="true" 
+      class="org.adligo.fabricate.repository.RepositoryManager" />
+    <fns:log setting="false" 
+      class="org.adligo.fabricate.repository.DependenciesManager" />
+    <fns:log setting="false" 
+      class="org.adligo.fabricate.repository.DependencyManager" />
         
-        <!-- routines -->
-        <fns:log setting="false"
-        	class="org.adligo.fabricate.routines.RoutineBuilder" />
+    <!-- routines -->
+    <fns:log setting="false"
+      class="org.adligo.fabricate.routines.RoutineBuilder" />
         	
-        <!-- implicit routines -->
-        <fns:log setting="false"
-        	class="org.adligo.fabricate.routines.implicit.CompileSourceTask" />
-        <fns:log setting="false"
-        	class="org.adligo.fabricate.routines.implicit.GitUpdateRoutine" />
-        <fns:log setting="false"
-        	class="org.adligo.fabricate.routines.implicit.LoadProjectTask" />
-    </fns:logs>
-    <fns:attributes>
-    	<cns:param key="include" value="src"> 
-    		<cns:param key="files" value="*/*.xml"/> 
-    		<cns:param key="files" value="*/*.xsd"/> 
-    	</cns:param>
-    	<cns:param key="gwt include" value="src">
-    		<cns:param key="files" value="*/*.xml"/> 
-    		<cns:param key="files" value="*/*.xsd"/> 
-    		<cns:param key="files" value="*/*.java"/> 
-    	</cns:param>
-    	<cns:param key="ide" value="eclipse">
-    		<cns:param key="output" value="classes_e"/> 
-    		<cns:param key="con" value="org.eclipse.jdt.launching.JRE_CONTAINER" />
-    	</cns:param>
-    </fns:attributes>
-    <fns:dependencies>
+    <!-- implicit routines -->
+    <fns:log setting="false"
+      class="org.adligo.fabricate.routines.implicit.CompileSourceTask" />
+    <fns:log setting="false"
+      class="org.adligo.fabricate.routines.implicit.GitUpdateRoutine" />
+    <fns:log setting="false"
+      class="org.adligo.fabricate.routines.implicit.LoadProjectTask" />
+  </fns:logs>
+  <fns:attributes>
+    <cns:param key="include" value="src"> 
+      <cns:param key="files" value="*/*.xml"/> 
+      <cns:param key="files" value="*/*.xsd"/> 
+    </cns:param>
+    <cns:param key="gwt include" value="src">
+      <cns:param key="files" value="*/*.xml"/> 
+      <cns:param key="files" value="*/*.xsd"/> 
+      <cns:param key="files" value="*/*.java"/> 
+    </cns:param>
+    <cns:param key="ide" value="eclipse">
+      <cns:param key="output" value="classes_e"/> 
+      <cns:param key="con" value="org.eclipse.jdt.launching.JRE_CONTAINER" />
+    </cns:param>
+  </fns:attributes>
+  <fns:dependencies>
+ 	<!-- Fabricate may use multiple remote_repositories, and is backward compatible
+ 		with Maven, although underscores (_) are not compatible with Maven.
+ 	-->
+    <fns:remote_repository>http://127.0.0.1/</fns:remote_repository>
     
-        <fns:remote_repository>http://127.0.0.1/</fns:remote_repository>
-        <!-- 
-        <fns:remote_repository>http://repo1.maven.org/maven2/</fns:remote_repository>
-        <fns:remote_repository>http://uk.maven.org/maven2/</fns:remote_repository>
-        <fns:remote_repository>http://mirrors.ibiblio.org/maven2/</fns:remote_repository>
-         -->
-		<fns:dependency group="org.adligo" artifact="fabricate4eclipse" 
-			fileName="fabricate4eclipse_snapshot.jar" version="snapshot" />        
-    </fns:dependencies>
+    <!-- 
+      <fns:remote_repository>http://repo1.maven.org/maven2/</fns:remote_repository>
+      <fns:remote_repository>http://uk.maven.org/maven2/</fns:remote_repository>
+      <fns:remote_repository>http://mirrors.ibiblio.org/maven2/</fns:remote_repository>
+    -->
+    <fns:dependency group="org.adligo" artifact="fabricate4eclipse" 
+      fileName="fabricate4eclipse_snapshot.jar" version="snapshot" />        
+  </fns:dependencies>
     
-    <fns:command name="classpath2eclipse" class="org.adligo.fabricate.routines.ProjectQueueRoutine">
-		<cns:task name="classpath2eclipseTask" class="org.adligo.fabricate4eclipse.classpath_conversion.FabricateClasspathToEclipse4ishConverter" />
-    </fns:command>
-<!-- 
-    <fns:command name="decrypt" class="org.adligo.fabricate.routines.implicit.EncryptCommand"/>
-    <fns:trait name="decryptTrait" class="org.adligo.fabricate.routines.implicit.EncryptTrait"/>
-     -->
+  <fns:command name="classpath2eclipse" class="org.adligo.fabricate.routines.ProjectQueueRoutine">
+    <cns:task name="classpath2eclipseTask" class="org.adligo.fabricate4eclipse.classpath_conversion.FabricateClasspathToEclipse4ishConverter" />
+  </fns:command>
+  <!--  the following commented out code is a example of how to define a Fabricate command
+    	and trait.
+  -->
+  <!-- 
+  <fns:command name="decrypt" class="org.adligo.fabricate.routines.implicit.EncryptCommand"/>
+  <fns:trait name="decryptTrait" class="org.adligo.fabricate.routines.implicit.EncryptTrait"/>
+  -->
     
-    <fns:project_group>
-    	<fns:projects>
-    	    <fns:scm name="Git">
-    	    	<cns:params>
-	 	    	    <cns:param key="hostname" value="git" />
-	 	    	    <cns:param key="path" value="/opt/git/org" />
-	 	    	    <cns:param key="protocol" value="ssh" />
-		    	</cns:params>
-    	    </fns:scm>
-    	    <!--  alpha order projects here, as the dependencies are figured out automatically -->
-    	    <fns:project name="addoc.adligo.org" version=""/>
-    	    <fns:project name="addoc_tests.adligo.org" version=""/>
-    	    <!--  I will continue to support xml_io_generator using ant for a little while
-    	    	although some new projects xml_io_generator_4ant and xml_io_generator_4fabricate 
-    	    	will appear soon, to extract the ant specific code from xml_io_generator. 
-    	     -->
-    	    
-    	    
-    	    <fns:project name="ant_log.adligo.org" version=""/>
-    	    <!-- 
-    	    <fns:project name="ajaxb.adligo.org" version=""/>
-    	    <fns:project name="ajaxb_tests.adligo.org" version=""/>
-    	     -->
-    	    <fns:project name="aws_client.adligo.org" version=""/>
-    	    <fns:project name="aws_client_tests.adligo.org" version=""/>
-    	    <!--  note awsgp and asdc* will be released later with different names. -->
+  <fns:project_group>
+    <fns:projects>
+      <fns:scm name="Git">
+        <cns:params>
+          <cns:param key="hostname" value="git" />
+          <cns:param key="path" value="/opt/git/org" />
+          <cns:param key="protocol" value="ssh" />
+        </cns:params>
+      </fns:scm>
+        
+      <!--  alpha order projects here, as the dependencies are figured out automatically -->
+      <fns:project name="addoc.adligo.org" version=""/>
+      <fns:project name="addoc_tests.adligo.org" version=""/>
+      <!--  I will continue to support xml_io_generator using ant for a little while
+          although some new projects xml_io_generator_4ant and xml_io_generator_4fabricate 
+          will appear soon, to extract the ant specific code from xml_io_generator. 
+      -->
+  	    
+      <fns:project name="ant_log.adligo.org" version=""/>
+      <!-- 
+      <fns:project name="ajaxb.adligo.org" version=""/>
+      <fns:project name="ajaxb_tests.adligo.org" version=""/>
+      -->
+      <fns:project name="aws_client.adligo.org" version=""/>
+      <fns:project name="aws_client_tests.adligo.org" version=""/>
+      <!--  note awsgp and asdc* will be released later with different names. -->
 
-    	    <fns:project name="cl.adligo.org" version=""/>
-    	    <fns:project name="cl_tests.adligo.org" version=""/>
+      <fns:project name="cl.adligo.org" version=""/>
+      <fns:project name="cl_tests.adligo.org" version=""/>
 
-    	    <fns:project name="css.adligo.org" version=""/>
-    	    <fns:project name="css_tests.adligo.org" version=""/>
+      <fns:project name="css.adligo.org" version=""/>
+      <fns:project name="css_tests.adligo.org" version=""/>
     	    
-    	    <fns:project name="fabricate.adligo.org" version="" />
-    	    <fns:project name="fabricate_tests.adligo.org" version="" />
+      <fns:project name="fabricate.adligo.org" version="" />
+      <fns:project name="fabricate_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="fabricate4eclipse.adligo.org" version="" />
-    	    <!-- 
-    	    <fns:project name="fabricate4eclipse_tests.adligo.org" version="" />
-    	    <fns:project name="fabricate4jaxb.adligo.org" version="" />
-    	    <fns:project name="fabricate4jaxb_tests.adligo.org" version="" />
-    	    <fns:project name="fabricate4junit.adligo.org" version="" />
-    	    <fns:project name="fabricate4junit_tests.adligo.org" version="" />
-    	    <fns:project name="fabricate4proguard.adligo.org" version="" />
-    	    <fns:project name="fabricate4proguard_tests.adligo.org" version="" />
-    	    <fns:project name="fabricate4tests4j.adligo.org" version="" />
-    	    <fns:project name="fabricate4tests4j_tests.adligo.org" version="" />
-    	    <fns:project name="fabricate4xml_io.adligo.org" version="" />
-    	    <fns:project name="fabricate4xml_io_tests.adligo.org" version="" />
-    	    -->
-    	    <fns:project name="gwt_refs.adligo.org" version="" />
+      <fns:project name="fabricate4eclipse.adligo.org" version="" />
+        
+      <fns:project name="fabricate4eclipse_tests.adligo.org" version="" />
+      <!-- 
+      <fns:project name="fabricate4jaxb.adligo.org" version="" />
+      <fns:project name="fabricate4jaxb_tests.adligo.org" version="" />
+      <fns:project name="fabricate4junit.adligo.org" version="" />
+      <fns:project name="fabricate4junit_tests.adligo.org" version="" />
+      <fns:project name="fabricate4proguard.adligo.org" version="" />
+      <fns:project name="fabricate4proguard_tests.adligo.org" version="" />
+      <fns:project name="fabricate4tests4j.adligo.org" version="" />
+      <fns:project name="fabricate4tests4j_tests.adligo.org" version="" />
+      <fns:project name="fabricate4xml_io.adligo.org" version="" />
+      <fns:project name="fabricate4xml_io_tests.adligo.org" version="" />
+      -->
+      <fns:project name="gwt_refs.adligo.org" version="" />
     	    
-    	    <fns:project name="hibernate_db.adligo.org" version="" />
+      <fns:project name="hibernate_db.adligo.org" version="" />
     	    
-    	    <fns:project name="i_adi.adligo.org" version="" />
-    	    <fns:project name="i_adi_tests.adligo.org" version="" />
+      <fns:project name="i_adi.adligo.org" version="" />
+      <fns:project name="i_adi_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="i_adig.adligo.org" version="" />
-    	    <fns:project name="i_adig_tests.adligo.org" version="" />
+      <fns:project name="i_adig.adligo.org" version="" />
+      <fns:project name="i_adig_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="i_db.adligo.org" version="" />
-    	    <fns:project name="i_db_tests.adligo.org" version="" />
+      <fns:project name="i_db.adligo.org" version="" />
+      <fns:project name="i_db_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="i_disk.adligo.org" version="" />
-    	    <fns:project name="i_disk_tests.adligo.org" version="" />
+      <fns:project name="i_disk.adligo.org" version="" />
+      <fns:project name="i_disk_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="i_ldap.adligo.org" version="" />
-    	    <fns:project name="i_ldap_tests.adligo.org" version="" />
+      <fns:project name="i_ldap.adligo.org" version="" />
+      <fns:project name="i_ldap_tests.adligo.org" version="" />
     	   
-    	    <fns:project name="i_log.adligo.org" version="" />
-    	    <fns:project name="i_log_tests.adligo.org" version="" />
+      <fns:project name="i_log.adligo.org" version="" />
+      <fns:project name="i_log_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="i_log4log4j.adligo.org" version="" />
-    	    <fns:project name="i_log4utilLog.adligo.org" version="" />
+      <fns:project name="i_log4log4j.adligo.org" version="" />
+      <fns:project name="i_log4utilLog.adligo.org" version="" />
     	    
-    	    <fns:project name="i_pool.adligo.org" version="" />
-    	    <fns:project name="i_pool_tests.adligo.org" version="" />
+      <fns:project name="i_pool.adligo.org" version="" />
+      <fns:project name="i_pool_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="i_smtp.adligo.org" version="" />
-    	    <fns:project name="i_smtp_tests.adligo.org" version="" />
+      <fns:project name="i_smtp.adligo.org" version="" />
+      <fns:project name="i_smtp_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="i_util.adligo.org" version="" />
-    	    <fns:project name="i_util_tests.adligo.org" version="" />
+      <fns:project name="i_util.adligo.org" version="" />
+      <fns:project name="i_util_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="jse_util.adligo.org" version="" />
-    	    <fns:project name="jse_util_tests.adligo.org" version="" />
+      <fns:project name="jse_util.adligo.org" version="" />
+      <fns:project name="jse_util_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="jse_adig.adligo.org" version="" />
-    	    <fns:project name="jse_adig_tests.adligo.org" version="" />
+      <fns:project name="jse_adig.adligo.org" version="" />
+      <fns:project name="jse_adig_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="models_core.adligo.org" version="" />
-    	    <fns:project name="models_core_tests.adligo.org" version="" />
+      <fns:project name="models_core.adligo.org" version="" />
+      <fns:project name="models_core_tests.adligo.org" version="" />
 
+      <fns:project name="models_core_relations.adligo.org" version="" />
+      <fns:project name="models_core_relations_tests.adligo.org" version="" />
+      <!--
+      <fns:project name="models_core_relations_xml_io.adligo.org" version=""/>
+      <fns:project name="models_core_relations_xml_io_tests.adligo.org" version=""/>
+      <fns:project name="models_core_relations_xml_io_net.adligo.org" version=""/>
+      <fns:project name="models_core_relations_xml_io_net_tests.adligo.org" version=""/>
     	    
-    	    <fns:project name="models_core_relations.adligo.org" version="" />
-    	    <fns:project name="models_core_relations_tests.adligo.org" version="" />
-    	    <!--
-    	    <fns:project name="models_core_relations_xml_io.adligo.org" version=""/>
-    	    <fns:project name="models_core_relations_xml_io_tests.adligo.org" version=""/>
-    	    <fns:project name="models_core_relations_xml_io_net.adligo.org" version=""/>
-    	    <fns:project name="models_core_relations_xml_io_net_tests.adligo.org" version=""/>
+      <fns:project name="models_core_xml_io.adligo.org" version=""/>
+      <fns:project name="models_core_xml_io_tests.adligo.org" version=""/>
+      <fns:project name="models_core_xml_io_net.adligo.org" version=""/>
+      <fns:project name="models_core_xml_io_net_tests.adligo.org" version=""/>
+      -->
+      <fns:project name="params.adligo.org" version="" />
+      <fns:project name="params_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="models_core_xml_io.adligo.org" version=""/>
-    	    <fns:project name="models_core_xml_io_tests.adligo.org" version=""/>
-    	    <fns:project name="models_core_xml_io_net.adligo.org" version=""/>
-    	    <fns:project name="models_core_xml_io_net_tests.adligo.org" version=""/>
-    	    -->
-    	    <fns:project name="params.adligo.org" version="" />
-    	    <fns:project name="params_tests.adligo.org" version="" />
+      <!--  tests and tests_tests are deprecated, moving to tests4j -->
+      <fns:project name="tests.adligo.org" version="" />
+      <fns:project name="tests_tests.adligo.org" version="" />
     	    
-    	    <!--  tests and tests_tests are deprecated, moving to tests4j -->
-    	    <fns:project name="tests.adligo.org" version="" />
-    	    <fns:project name="tests_tests.adligo.org" version="" />
+      <fns:project name="tests4j.adligo.org" version="" />
+      <fns:project name="tests4j_gen.adligo.org" version="" />
+      <fns:project name="tests4j_4gwt.adligo.org" version="" />
+      <fns:project name="tests4j_4jacoco.adligo.org" version="" />
+      <fns:project name="tests4j_4mockito.adligo.org" version="" />
     	    
-    	    <fns:project name="tests4j.adligo.org" version="" />
-    	    <fns:project name="tests4j_gen.adligo.org" version="" />
-    	    <fns:project name="tests4j_4gwt.adligo.org" version="" />
-    	    <fns:project name="tests4j_4jacoco.adligo.org" version="" />
-    	    <fns:project name="tests4j_4mockito.adligo.org" version="" />
+      <fns:project name="tests4j_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="tests4j_tests.adligo.org" version="" />
+      <fns:project name="xml_io.adligo.org" version="" />
+      <fns:project name="xml_io_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="xml_io.adligo.org" version="" />
-    	    <fns:project name="xml_io_tests.adligo.org" version="" />
+      <fns:project name="xml_io_generator.adligo.org" version="" />
+      <fns:project name="xml_io_generator_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="xml_io_generator.adligo.org" version="" />
-    	    <fns:project name="xml_io_generator_tests.adligo.org" version="" />
+      <!-- 
+      <fns:project name="xml_schemas.adligo.org" version=""/>
+      <fns:project name="xml_schemas_tests.adligo.org" version=""/>
+      -->
+      <fns:project name="xmlt.adligo.org" version="" />
+      <fns:project name="xmlt_tests.adligo.org" version="" />
     	    
-    	    <!-- 
-    	    <fns:project name="xml_schemas.adligo.org" version=""/>
-    	    <fns:project name="xml_schemas_tests.adligo.org" version=""/>
-			-->
-    	    <fns:project name="xmlt.adligo.org" version="" />
-    	    <fns:project name="xmlt_tests.adligo.org" version="" />
+      <fns:project name="xmlt4hibernate.adligo.org" version="" />
+      <fns:project name="xmlt4hibernate_tests.adligo.org" version="" />
     	    
-    	    <fns:project name="xmlt4hibernate.adligo.org" version="" />
-    	    <fns:project name="xmlt4hibernate_tests.adligo.org" version="" />
-    	    
-    	    <fns:project name="xmlt4jpa.adligo.org" version="" />
-    	    <fns:project name="xmlt4jpa_tests.adligo.org" version="" />
-    	</fns:projects>
-    </fns:project_group>
+      <fns:project name="xmlt4jpa.adligo.org" version="" />
+      <fns:project name="xmlt4jpa_tests.adligo.org" version="" />
+    </fns:projects>
+  </fns:project_group>
 </fns:fabricate>
