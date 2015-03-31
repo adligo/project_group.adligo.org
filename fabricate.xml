@@ -25,6 +25,10 @@
         	
         <!-- implicit routines -->
         <fns:log setting="false"
+        	class="org.adligo.fabricate.routines.implicit.CompileSourceTask" />
+        <fns:log setting="false"
+        	class="org.adligo.fabricate.routines.implicit.GitUpdateRoutine" />
+        <fns:log setting="false"
         	class="org.adligo.fabricate.routines.implicit.LoadProjectTask" />
     </fns:logs>
     <fns:attributes>
