@@ -9,11 +9,23 @@
      -->
     <fns:java Xmx="1g" Xms="256m" threads="8" />
     <fns:logs>
-        <fns:log class="org.adligo.fabricate.FabricateOptsSetup" setting="true"/>
-		<fns:log class="org.adligo.fabricate.repository.RepositoryManager" setting="true"/>
-        <fns:log class="org.adligo.fabricate.repository.DependenciesManager" setting="false"/>
-        <fns:log class="org.adligo.fabricate.repository.DependencyManager" setting="false"/>
+        <fns:log setting="true" 
+        	class="org.adligo.fabricate.FabricateOptsSetup"/>
+       	<!--  reposistory -->
+		<fns:log setting="true" 
+			class="org.adligo.fabricate.repository.RepositoryManager" />
+        <fns:log setting="false" 
+        	class="org.adligo.fabricate.repository.DependenciesManager" />
+        <fns:log setting="false" 
+        	class="org.adligo.fabricate.repository.DependencyManager" />
         
+        <!-- routines -->
+        <fns:log setting="false"
+        	class="org.adligo.fabricate.routines.RoutineBuilder" />
+        	
+        <!-- implicit routines -->
+        <fns:log setting="false"
+        	class="org.adligo.fabricate.routines.implicit.LoadProjectTask" />
     </fns:logs>
     <fns:attributes>
     	<cns:param key="include" value="src"> 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lns:library xmlns:lns="http://www.adligo.org/fabricate/xml/io_v1/library_v1_0.xsd" 
+	xmlns:cns="http://www.adligo.org/fabricate/xml/io_v1/common_v1_0.xsd"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+   <lns:dependencies>
+    <!--  Note: The gwt library is usually NOT dependent on the GWT platform setting, projects which 
+   	depend on this library may set platform specific behavior in the library tag.  By default
+   	they will include the library, but they may filter it out for GWT specific builds.
+   -->
+    <lns:dependency group="com.google.gwt" artifact="gwt-dev" version="2.6.1" />
+   </lns:dependencies>
+</lns:library>
