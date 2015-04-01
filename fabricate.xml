@@ -77,9 +77,10 @@
     <fns:projects>
       <fns:scm name="Git">
         <cns:params>
-          <cns:param key="hostname" value="git" />
-          <cns:param key="path" value="/opt/git/org" />
+          <cns:param key="hostname" value="github.com" />
+          <cns:param key="path" value="adligo" />
           <cns:param key="protocol" value="ssh" />
+          <cns:param key="user" value="git" />
         </cns:params>
       </fns:scm>
         
