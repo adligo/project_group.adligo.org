@@ -77,10 +77,9 @@
     <fns:projects>
       <fns:scm name="Git">
         <cns:params>
-          <cns:param key="hostname" value="github.com" />
-          <cns:param key="path" value="adligo" />
+          <cns:param key="hostname" value="git" />
+          <cns:param key="path" value="/opt/git/org" />
           <cns:param key="protocol" value="ssh" />
-          <cns:param key="user" value="git" />
         </cns:params>
       </fns:scm>
         
@@ -107,11 +106,11 @@
       <fns:project name="css.adligo.org" version="vg0_1_c1"/>
       <fns:project name="css_tests.adligo.org" version="vg0_1_c1"/>
     	    
-      <fns:project name="fabricate.adligo.org" version="vg0_1" />
-      <fns:project name="fabricate_tests.adligo.org" version="vg0_1" />
+      <fns:project name="fabricate.adligo.org" version="vg0_1_0" />
+      <fns:project name="fabricate_tests.adligo.org" version="vg0_1_0" />
     	    
-      <fns:project name="fabricate4eclipse.adligo.org" version="vg0_1" />
-      <fns:project name="fabricate4eclipse_tests.adligo.org" version="vg0_1" />
+      <fns:project name="fabricate4eclipse.adligo.org" version="vg0_1_0" />
+      <fns:project name="fabricate4eclipse_tests.adligo.org" version="vg0_1_0" />
       
       <!-- 
       <fns:project name="fabricate4jaxb.adligo.org" version="" />
