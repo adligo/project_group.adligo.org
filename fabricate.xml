@@ -51,7 +51,7 @@
  	<!-- Fabricate may use multiple remote_repositories, and is backward compatible
  		with Maven, although underscores (_) are not compatible with Maven.
  	-->
-    <fns:remote_repository>http://adligo.org/repository</fns:remote_repository>
+    <fns:remote_repository>http://adligo.org/repository/</fns:remote_repository>
     
     <!-- 
       <fns:remote_repository>http://repo1.maven.org/maven2/</fns:remote_repository>
