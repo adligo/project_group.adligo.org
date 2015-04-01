@@ -51,7 +51,7 @@
  	<!-- Fabricate may use multiple remote_repositories, and is backward compatible
  		with Maven, although underscores (_) are not compatible with Maven.
  	-->
-    <fns:remote_repository>http://127.0.0.1/</fns:remote_repository>
+    <fns:remote_repository>http://adligo.org/repository</fns:remote_repository>
     
     <!-- 
       <fns:remote_repository>http://repo1.maven.org/maven2/</fns:remote_repository>
@@ -59,7 +59,7 @@
       <fns:remote_repository>http://mirrors.ibiblio.org/maven2/</fns:remote_repository>
     -->
     <fns:dependency group="org.adligo" artifact="fabricate4eclipse" 
-      fileName="fabricate4eclipse_vg0_1_c1.jar" version="vg0_1_c1" />        
+      fileName="fabricate4eclipse_vg0_1_2.jar" version="vg0_1_2" />        
   </fns:dependencies>
     
   <fns:command name="classpath2eclipse" class="org.adligo.fabricate.routines.ProjectQueueRoutine">
